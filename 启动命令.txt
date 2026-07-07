@@ -1,0 +1,4 @@
+cmd
+前端启动命令：npm run dev
+后端启动命令：python main.py
+后端接口：http://127.0.0.1:8000/docs

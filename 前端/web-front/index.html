@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医疗器械AI营销报价系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            /* 上半天空渐变、下半医院远景柔和过渡背景 */
+            background-image: 
+                linear-gradient(to bottom, 
+                    #87CEFA 0%, 
+                    #b8e0fc 30%, 
+                    rgba(200, 230, 255, 0.8) 50%,
+                    rgba(220, 235, 245, 0.7) 65%,
+                    rgba(230, 238, 242, 0.9) 80%,
+                    #e8edf2 100%
+                );
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+        }
+
+        /* ========== 左侧侧边导航栏（医疗器械业务菜单） ========== */
+        .sidebar {
+            width: 240px;
+            background: rgba(10, 60, 120, 0.94);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 30px 0;
+            box-shadow: 3px 0 14px rgba(0,35,80,0.18);
+            z-index: 99;
+            transition: width 0.3s ease;
+        }
+        .sidebar-logo {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.16);
+            margin: 0 20px 24px;
+            line-height: 1.5;
+        }
+        .sidebar-group-title {
+            color: #a0c6f0;
+            font-size: 13px;
+            padding: 0 24px 8px;
+            letter-spacing: 0.5px;
+        }
+        .sidebar-menu {
+            list-style: none;
+            margin-bottom: 26px;
+        }
+        .sidebar-menu li {
+            margin: 6px 16px;
+            border-radius: 10px;
+            transition: all 0.25s;
+        }
+        .sidebar-menu li a {
+            display: block;
+            color: #e6f0ff;
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 15px;
+        }
+        .sidebar-menu li:hover {
+            background: rgba(255,255,255,0.12);
+        }
+        .sidebar-menu li.active {
+            background: rgba(255,255,255,0.2);
+            border-left: 4px solid #36a2ff;
+        }
+
+        /* ========== 右侧主容器（顶部栏+核心内容） ========== */
+        .main-wrap {
+            flex: 1;
+            margin-left: 240px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ========== 顶部头部导航（登录、用户、消息、系统设置） ========== */
+        .top-header {
+            height: 64px;
+            background: rgba(255,255,255,0.78);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            box-shadow: 0 2px 10px rgba(0,30,80,0.09);
+        }
+        .header-left-tip {
+            font-size: 15px;
+            color: #153b70;
+            font-weight: 500;
+        }
+        .header-actions {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+        .header-icon-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #e1ecfa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1654b8;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .header-icon-btn:hover {
+            background: #c8e0fc;
+        }
+        .header-btn {
+            padding: 8px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .login-btn {
+            background: transparent;
+            color: #1654b8;
+            border: 1px solid #1654b8;
+        }
+        .login-btn:hover {
+            background: rgba(22, 84, 184, 0.08);
+        }
+        .register-btn {
+            background: linear-gradient(90deg, #1960d8, #2574e8);
+            color: #fff;
+        }
+        .register-btn:hover {
+            background: linear-gradient(90deg, #0f4296, #1d68d9);
+        }
+
+        /* ========== AI报价核心内容区域 ========== */
+        .content-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+        .card-box {
+            width: 100%;
+            max-width: 680px;
+            background: #ffffff;
+            padding: 42px 38px;
+            border-radius: 22px;
+            box-shadow: 0 10px 36px rgba(20, 70, 140, 0.14);
+            transition: all 0.3s ease;
+        }
+        .card-box:hover {
+            box-shadow: 0 14px 46px rgba(20, 70, 140, 0.18);
+        }
+        .title {
+            text-align: center;
+            font-size: 27px;
+            color: #0f2b50;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+        }
+        .title-desc {
+            text-align: center;
+            color: #546888;
+            font-size: 14px;
+            margin-bottom: 26px;
+        }
+        #question-input {
+            width: 100%;
+            min-height: 150px;
+            padding: 18px 20px;
+            border: 1px solid #d0dcf0;
+            border-radius: 14px;
+            font-size: 15px;
+            color: #2c3e50;
+            resize: vertical;
+            outline: none;
+            transition: 0.25s ease;
+            background-color: #fafcff;
+        }
+        #question-input::placeholder {
+            color: #94a3b8;
+        }
+        #question-input:focus {
+            border-color: #2574e8;
+            box-shadow: 0 0 0 3px rgba(37, 116, 232, 0.16);
+            background-color: #fff;
+        }
+        .submit-btn {
+            display: block;
+            margin: 26px auto;
+            padding: 13px 46px;
+            background: linear-gradient(90deg, #2574e8, #1960d8);
+            border: none;
+            border-radius: 11px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(90deg, #1d68d9, #1452c2);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px rgba(37, 116, 232, 0.32);
+        }
+        .submit-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(37, 116, 232, 0.26);
+        }
+        .result-wrap {
+            margin-top: 12px;
+        }
+        .result-label {
+            font-size: 18px;
+            color: #2d4060;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 500;
+        }
+        #result-area {
+            width: 100%;
+            min-height: 140px;
+            padding: 18px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            background-color: #f8fafe;
+            font-size: 15px;
+            color: #334155;
+            white-space: pre-wrap;
+            line-height: 1.7;
+        }
+
+        /* ========== 登录弹窗样式 ========== */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.45);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-inner {
+            width: 380px;
+            background: white;
+            padding: 34px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .modal-title {
+            font-size: 22px;
+            margin-bottom: 24px;
+            text-align: center;
+            color: #0f2b50;
+        }
+        .modal-input {
+            width: 100%;
+            padding: 13px 16px;
+            margin-bottom: 16px;
+            border: 1px solid #d0dcf0;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+        .modal-confirm {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(90deg, #2574e8, #1960d8);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .close-modal {
+            margin-top: 14px;
+            width: 100%;
+            padding: 11px;
+            background: #eef2f8;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+    <!-- 左侧业务侧边栏（医疗器械全功能菜单） -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">🏥 医疗器械AI营销报价系统</div>
+
+        <div class="sidebar-group-title">AI智能营销模块</div>
+        <ul class="sidebar-menu">
+            <li class="active"><a href="#">🤖 AI智能报价（当前页）</a></li>
+            <li><a href="#">📝 营销文案AI生成</a></li>
+            <li><a href="#">📊 客户需求智能分析</a></li>
+        </ul>
+
+        <div class="sidebar-group-title">器械业务管理</div>
+        <ul class="sidebar-menu">
+            <li><a href="#">📦 医疗器械产品库</a></li>
+            <li><a href="#">💰 报价单记录管理</a></li>
+            <li><a href="#">👥 医院/渠道客户档案</a></li>
+            <li><a href="#">📜 资质注册证管理</a></li>
+        </ul>
+
+        <div class="sidebar-group-title">系统运维设置</div>
+        <ul class="sidebar-menu">
+            <li><a href="#">👤 用户权限管理</a></li>
+            <li><a href="#">⚙️ 报价规则配置</a></li>
+            <li><a href="#">📋 操作日志审计</a></li>
+            <li><a href="#">🚪 退出系统</a></li>
+        </ul>
+    </aside>
+
+    <!-- 右侧主页面区域 -->
+    <div class="main-wrap">
+        <!-- 顶部头部栏：提示、消息、登录注册 -->
+        <header class="top-header">
+            <div class="header-left-tip">AI对话生成医疗器械合规报价单，适配医院、经销商渠道</div>
+            <div class="header-actions">
+                <div class="header-icon-btn">🔔</div>
+                <div class="header-icon-btn">⚙️</div>
+                <button class="header-btn login-btn" id="openLogin">员工登录</button>
+                <button class="header-btn register-btn">账号注册</button>
+            </div>
+        </header>
+
+        <!-- 核心AI报价交互卡片 -->
+        <div class="content-box">
+            <div class="card-box">
+                <h1 class="title">人工智能器械报价助手</h1>
+                <p class="title-desc">输入所需需求我们将自动查询标准化医疗器械报价方案</p>
+                <textarea id="question-input" placeholder="示例：三甲医院检验科采购全自动生化分析仪2台，预算80万以内，需要配套试剂、三年维保，用于常规体检"></textarea>
+                <button class="submit-btn" id="submit-btn">提交提问</button>
+                <div class="result-wrap">
+                    <span class="result-label">报价方案结果：</span>
+                    <div id="result-area"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 员工登录弹窗 -->
+    <div class="login-modal" id="loginModal">
+        <div class="modal-inner">
+            <h2 class="modal-title">员工系统登录</h2>
+            <input class="modal-input" placeholder="员工账号/工号">
+            <input class="modal-input" type="password" placeholder="登录密码">
+            <button class="modal-confirm">登录进入系统</button>
+            <button class="close-modal" id="closeLogin">取消</button>
+        </div>
+    </div>
+
+    <script>
+        // AI报价生成逻辑（医疗器械业务模拟）
+        const input = document.getElementById('question-input');
+        const btn = document.getElementById('submit-btn');
+        const resultBox = document.getElementById('result-area');
+        btn.addEventListener('click', () => {
+            const customerDemand = input.value.trim();
+            if (!customerDemand) {
+                resultBox.innerText = '请输入医院/经销商采购需求（器械类型、采购数量、预算、维保要求等），再生成报价！';
+                return;
+            }
+            // 模拟AI医疗器械报价返回结果
+            resultBox.innerText = `【客户采购需求】
+${customerDemand}
+
+【AI标准化报价方案】
+一、推荐器械型号：全自动生化分析仪 MD-380（二类医疗器械，合规注册证齐全）
+1. 设备单价：328000元/台，采购2台合计：656000元
+2. 配套全年试剂打包价：98000元/年
+3. 三年上门维保服务：45000元
+
+二、总价核算
+设备+试剂+维保总报价：799000元（符合客户80万预算要求）
+渠道合作折扣：医院长期采购可享96折，折后总价767040元
+
+三、配套营销政策
+1. 免费上门安装调试、医护人员操作培训
+2. 设备质保2年，维保期内故障24小时上门响应
+3. 年度试剂采购满10万额外赠送校准耗材套装
+
+四、合规说明
+产品具备NMPA医疗器械注册证，全套资质文件随报价单同步导出，支持医院招投标流程`;
+        })
+
+        // 登录弹窗交互控制
+        const openLoginBtn = document.getElementById('openLogin');
+        const loginModal = document.getElementById('loginModal');
+        const closeLoginBtn = document.getElementById('closeLogin');
+        openLoginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        })
+        closeLoginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        })
+        // 点击遮罩空白关闭弹窗
+        loginModal.addEventListener('click', (e) => {
+            if(e.target === loginModal) loginModal.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

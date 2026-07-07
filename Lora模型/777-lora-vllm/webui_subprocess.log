@@ -1,0 +1,401 @@
+/root/autodl-tmp/envs/llmf/lib/python3.11/site-packages/jieba/_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[INFO|2026-06-26 14:55:53] llamafactory.hparams.parser:523 >> Process rank: 0, world size: 1, device: cuda:0, distributed training: False, compute dtype: torch.bfloat16
+[INFO|configuration_utils.py:769] 2026-06-26 14:55:53,077 >> loading configuration file /root/autodl-tmp/code/model/Qwen/Qwen2.5-0.5B-Instruct/config.json
+[INFO|configuration_utils.py:847] 2026-06-26 14:55:53,082 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 896,
+  "initializer_range": 0.02,
+  "intermediate_size": 4864,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "max_window_layers": 21,
+  "model_type": "qwen2",
+  "num_attention_heads": 14,
+  "num_hidden_layers": 24,
+  "num_key_value_heads": 2,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000.0,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": true,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|configuration_utils.py:769] 2026-06-26 14:55:53,398 >> loading configuration file /root/autodl-tmp/code/model/Qwen/Qwen2.5-0.5B-Instruct/config.json
+[INFO|configuration_utils.py:847] 2026-06-26 14:55:53,400 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 896,
+  "initializer_range": 0.02,
+  "intermediate_size": 4864,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "max_window_layers": 21,
+  "model_type": "qwen2",
+  "num_attention_heads": 14,
+  "num_hidden_layers": 24,
+  "num_key_value_heads": 2,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000.0,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": true,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|configuration_utils.py:769] 2026-06-26 14:55:53,400 >> loading configuration file /root/autodl-tmp/code/model/Qwen/Qwen2.5-0.5B-Instruct/config.json
+[INFO|configuration_utils.py:847] 2026-06-26 14:55:53,401 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 896,
+  "initializer_range": 0.02,
+  "intermediate_size": 4864,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "max_window_layers": 21,
+  "model_type": "qwen2",
+  "num_attention_heads": 14,
+  "num_hidden_layers": 24,
+  "num_key_value_heads": 2,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000.0,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": true,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+[INFO|2026-06-26 14:55:53] llamafactory.data.loader:144 >> Loading dataset medical_device_quote_alpaca.json...
+Converting format of dataset (num_proc=16):   0%|          | 0/52 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16):   8%|▊         | 4/52 [00:00<00:02, 18.32 examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 52/52 [00:00<00:00, 139.83 examples/s]
+Running tokenizer on dataset (num_proc=16):   0%|          | 0/46 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   7%|▋         | 3/46 [00:01<00:25,  1.69 examples/s]Running tokenizer on dataset (num_proc=16):  13%|█▎        | 6/46 [00:02<00:17,  2.25 examples/s]Running tokenizer on dataset (num_proc=16):  20%|█▉        | 9/46 [00:03<00:14,  2.50 examples/s]Running tokenizer on dataset (num_proc=16):  26%|██▌       | 12/46 [00:04<00:12,  2.65 examples/s]Running tokenizer on dataset (num_proc=16):  33%|███▎      | 15/46 [00:05<00:11,  2.74 examples/s]Running tokenizer on dataset (num_proc=16):  39%|███▉      | 18/46 [00:06<00:10,  2.78 examples/s]Running tokenizer on dataset (num_proc=16):  46%|████▌     | 21/46 [00:07<00:08,  2.83 examples/s]Running tokenizer on dataset (num_proc=16):  52%|█████▏    | 24/46 [00:09<00:07,  2.81 examples/s]Running tokenizer on dataset (num_proc=16):  59%|█████▊    | 27/46 [00:10<00:06,  2.85 examples/s]Running tokenizer on dataset (num_proc=16):  65%|██████▌   | 30/46 [00:11<00:05,  2.78 examples/s]Running tokenizer on dataset (num_proc=16):  72%|███████▏  | 33/46 [00:12<00:04,  2.73 examples/s]Running tokenizer on dataset (num_proc=16):  78%|███████▊  | 36/46 [00:13<00:03,  2.76 examples/s]Running tokenizer on dataset (num_proc=16):  85%|████████▍ | 39/46 [00:14<00:02,  2.77 examples/s]Running tokenizer on dataset (num_proc=16):  91%|█████████▏| 42/46 [00:15<00:01,  2.77 examples/s]Running tokenizer on dataset (num_proc=16):  96%|█████████▌| 44/46 [00:16<00:00,  2.49 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 46/46 [00:17<00:00,  2.30 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 46/46 [00:17<00:00,  2.57 examples/s]
+num_proc must be <= 6. Reducing num_proc to 6 for dataset of size 6.
+training example:
+input_ids:
+[151644, 8948, 198, 2610, 525, 1207, 16948, 11, 3465, 553, 54364, 14817, 13, 1446, 525, 264, 10950, 17847, 13, 151645, 198, 151644, 872, 198, 105043, 109110, 100168, 101115, 105388, 101057, 37945, 100345, 100017, 102049, 27369, 43959, 104715, 105388, 100389, 198, 100017, 5122, 102240, 99562, 108398, 100634, 3837, 104408, 5122, 44991, 100043, 3837, 102156, 110683, 5122, 23, 20, 3837, 102049, 104862, 5122, 21, 15, 31207, 3837, 102049, 100354, 5122, 102713, 101042, 99966, 3837, 81800, 5122, 19, 53938, 3837, 105795, 5122, 104778, 69526, 1773, 151645, 198, 151644, 77091, 198, 101914, 82700, 5122, 99658, 100739, 57566, 99446, 1599, 45, 12, 24, 15, 15, 15, 77407, 222, 100058, 101042, 99966, 3837, 114600, 5122, 16, 19, 31207, 3837, 118123, 5122, 20, 21, 31207, 3837, 110785, 5122, 23, 69982, 106554, 75768, 5122, 98841, 106554, 20, 15, 4, 10, 103999, 33447, 45900, 79766, 3837, 106329, 61149, 5122, 18, 20, 35727, 1773, 105388, 102401, 5122, 16, 13, 104778, 69526, 85106, 44636, 31935, 32757, 101978, 3837, 75882, 108107, 73157, 92536, 30440, 101978, 16, 20, 15, 110241, 24968, 17, 13, 99658, 100739, 57566, 99446, 18493, 102713, 101042, 100650, 99345, 111642, 99363, 24968, 18, 13, 100017, 102156, 15946, 49567, 3837, 98841, 106554, 102136, 100627, 26939, 20, 15, 4, 24968, 19, 13, 99640, 24442, 100458, 99316, 101267, 97480, 112241, 17, 15, 4, 1773, 100017, 72640, 5122, 97690, 12, 15, 16, 16, 3837, 82700, 72640, 5122, 6480, 35, 12, 15, 16, 15, 3837, 105388, 23990, 17992, 5122, 48, 2446, 12, 15, 16, 16, 3837, 105388, 113923, 15, 13, 23, 17, 3837, 97480, 105521, 26381, 5122, 15946, 1773, 151645, 198]
+inputs:
+<|im_start|>system
+You are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>
+<|im_start|>user
+你是医疗器械智能营销报价专家，请根据客户采购信息生成专业的报价方案
+客户：青岛大学附属医院，等级：三甲，信用评分：85，采购预算：60万，采购需求：血液分析仪，数量：4台，用途：检验科。<|im_end|>
+<|im_start|>assistant
+推荐产品：希森美康 XN-9000 血液分析仪，单价：14万，总价：56万，折扣：8%，付款方式：预付款50%+安装后付清，交付周期：35天。报价理由：1.检验科需要高通量检测，该型号每小时可检测150样本；2.希森美康在血液分析领域市场占有率第一；3.客户信用中等，预付款比例提高到50%；4.竞品贝克曼价格高出20%。客户编号：CUS-011，产品编号：PRD-010，报价单号：QTE-011，报价成功率0.82，价格敏感度：中。<|im_end|>
+
+label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 101914, 82700, 5122, 99658, 100739, 57566, 99446, 1599, 45, 12, 24, 15, 15, 15, 77407, 222, 100058, 101042, 99966, 3837, 114600, 5122, 16, 19, 31207, 3837, 118123, 5122, 20, 21, 31207, 3837, 110785, 5122, 23, 69982, 106554, 75768, 5122, 98841, 106554, 20, 15, 4, 10, 103999, 33447, 45900, 79766, 3837, 106329, 61149, 5122, 18, 20, 35727, 1773, 105388, 102401, 5122, 16, 13, 104778, 69526, 85106, 44636, 31935, 32757, 101978, 3837, 75882, 108107, 73157, 92536, 30440, 101978, 16, 20, 15, 110241, 24968, 17, 13, 99658, 100739, 57566, 99446, 18493, 102713, 101042, 100650, 99345, 111642, 99363, 24968, 18, 13, 100017, 102156, 15946, 49567, 3837, 98841, 106554, 102136, 100627, 26939, 20, 15, 4, 24968, 19, 13, 99640, 24442, 100458, 99316, 101267, 97480, 112241, 17, 15, 4, 1773, 100017, 72640, 5122, 97690, 12, 15, 16, 16, 3837, 82700, 72640, 5122, 6480, 35, 12, 15, 16, 15, 3837, 105388, 23990, 17992, 5122, 48, 2446, 12, 15, 16, 16, 3837, 105388, 113923, 15, 13, 23, 17, 3837, 97480, 105521, 26381, 5122, 15946, 1773, 151645, 198]
+labels:
+推荐产品：希森美康 XN-9000 血液分析仪，单价：14万，总价：56万，折扣：8%，付款方式：预付款50%+安装后付清，交付周期：35天。报价理由：1.检验科需要高通量检测，该型号每小时可检测150样本；2.希森美康在血液分析领域市场占有率第一；3.客户信用中等，预付款比例提高到50%；4.竞品贝克曼价格高出20%。客户编号：CUS-011，产品编号：PRD-010，报价单号：QTE-011，报价成功率0.82，价格敏感度：中。<|im_end|>
+
+Running tokenizer on dataset (num_proc=6):   0%|          | 0/6 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=6):  17%|█▋        | 1/6 [00:01<00:08,  1.69s/ examples]Running tokenizer on dataset (num_proc=6):  33%|███▎      | 2/6 [00:02<00:05,  1.27s/ examples]Running tokenizer on dataset (num_proc=6):  50%|█████     | 3/6 [00:03<00:03,  1.12s/ examples]Running tokenizer on dataset (num_proc=6):  67%|██████▋   | 4/6 [00:04<00:02,  1.08s/ examples]Running tokenizer on dataset (num_proc=6):  83%|████████▎ | 5/6 [00:05<00:01,  1.06s/ examples]Running tokenizer on dataset (num_proc=6): 100%|██████████| 6/6 [00:06<00:00,  1.01s/ examples]Running tokenizer on dataset (num_proc=6): 100%|██████████| 6/6 [00:06<00:00,  1.11s/ examples]
+[INFO|configuration_utils.py:769] 2026-06-26 14:56:23,947 >> loading configuration file /root/autodl-tmp/code/model/Qwen/Qwen2.5-0.5B-Instruct/config.json
+[INFO|configuration_utils.py:847] 2026-06-26 14:56:23,952 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "dtype": "bfloat16",
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 896,
+  "initializer_range": 0.02,
+  "intermediate_size": 4864,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "max_window_layers": 21,
+  "model_type": "qwen2",
+  "num_attention_heads": 14,
+  "num_hidden_layers": 24,
+  "num_key_value_heads": 2,
+  "pad_token_id": null,
+  "rms_norm_eps": 1e-06,
+  "rope_parameters": {
+    "rope_theta": 1000000.0,
+    "rope_type": "default"
+  },
+  "sliding_window": null,
+  "tie_word_embeddings": true,
+  "transformers_version": "5.6.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 151936
+}
+
+eval example:
+input_ids:
+[151644, 8948, 198, 2610, 525, 1207, 16948, 11, 3465, 553, 54364, 14817, 13, 1446, 525, 264, 10950, 17847, 13, 151645, 198, 151644, 872, 198, 105043, 109110, 100017, 17177, 99371, 101057, 37945, 71817, 100017, 17177, 99371, 33108, 100162, 102086, 198, 100017, 27369, 5122, 102568, 99363, 100634, 3837, 100680, 20450, 5122, 16, 24, 16, 18, 7948, 3837, 7948, 106462, 5122, 23, 53356, 3837, 99252, 99830, 8863, 5122, 23, 15, 15, 86341, 3837, 7948, 102049, 61191, 5122, 19, 15, 15, 15, 31207, 3837, 100022, 99721, 5122, 23, 7948, 3837, 106554, 65577, 5122, 100844, 3837, 104943, 95355, 5122, 15, 13, 23, 4, 1773, 151645, 198, 151644, 77091, 198, 100017, 17177, 99371, 59151, 5122, 99335, 52334, 100017, 4346, 52334, 8, 1773, 102086, 106643, 5122, 16, 13, 100176, 104118, 5122, 7948, 106462, 23, 53356, 3837, 101065, 99335, 100634, 24968, 17, 13, 102049, 99788, 5122, 7948, 102049, 61191, 19, 15, 15, 15, 31207, 3837, 100407, 102049, 24968, 18, 13, 99721, 100022, 5122, 23, 7948, 45861, 99721, 3837, 108334, 26381, 110010, 24968, 19, 13, 102156, 104215, 5122, 106554, 65577, 100844, 3837, 104943, 95355, 99285, 24968, 20, 13, 99345, 102484, 5122, 100779, 67364, 100361, 108770, 100634, 1773, 100017, 100162, 110683, 5122, 23, 23, 14, 16, 15, 15, 1773, 101898, 104238, 5122, 16, 13, 100662, 104728, 99721, 102217, 24968, 17, 13, 99553, 104747, 111683, 106510, 24968, 18, 13, 101118, 107353, 101136, 24968, 19, 13, 100656, 100340, 104595, 99556, 99721, 1773, 100017, 72640, 5122, 97690, 12, 15, 16, 22, 3837, 100017, 31905, 5122, 99335, 52334, 1773, 151645, 198]
+inputs:
+<|im_start|>system
+You are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>
+<|im_start|>user
+你是医疗器械客户分层专家，请进行客户分层和价值评估
+客户信息：宁波第一医院，成立时间：1913年，年营收：8亿，病床数：800张，年采购额：4000万，历史合作：8年，付款记录：良好，投诉率：0.8%。<|im_end|>
+<|im_start|>assistant
+客户分层结果：重要级客户(A级)。评估维度：1.规模指标：年营收8亿，区域重要医院；2.采购能力：年采购额4000万，稳定采购；3.合作历史：8年长合作，忠诚度极高；4.信用状况：付款记录良好，投诉率低；5.市场影响力：浙东地区标杆医院。客户价值评分：88/100。建议策略：1.保持现有合作深度；2.提供优先供货和服务；3.考虑战略合作协议；4.共同开展临床研究合作。客户编号：CUS-017，客户类型：重要级。<|im_end|>
+
+label_ids:
+[-100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, -100, 100017, 17177, 99371, 59151, 5122, 99335, 52334, 100017, 4346, 52334, 8, 1773, 102086, 106643, 5122, 16, 13, 100176, 104118, 5122, 7948, 106462, 23, 53356, 3837, 101065, 99335, 100634, 24968, 17, 13, 102049, 99788, 5122, 7948, 102049, 61191, 19, 15, 15, 15, 31207, 3837, 100407, 102049, 24968, 18, 13, 99721, 100022, 5122, 23, 7948, 45861, 99721, 3837, 108334, 26381, 110010, 24968, 19, 13, 102156, 104215, 5122, 106554, 65577, 100844, 3837, 104943, 95355, 99285, 24968, 20, 13, 99345, 102484, 5122, 100779, 67364, 100361, 108770, 100634, 1773, 100017, 100162, 110683, 5122, 23, 23, 14, 16, 15, 15, 1773, 101898, 104238, 5122, 16, 13, 100662, 104728, 99721, 102217, 24968, 17, 13, 99553, 104747, 111683, 106510, 24968, 18, 13, 101118, 107353, 101136, 24968, 19, 13, 100656, 100340, 104595, 99556, 99721, 1773, 100017, 72640, 5122, 97690, 12, 15, 16, 22, 3837, 100017, 31905, 5122, 99335, 52334, 1773, 151645, 198]
+labels:
+客户分层结果：重要级客户(A级)。评估维度：1.规模指标：年营收8亿，区域重要医院；2.采购能力：年采购额4000万，稳定采购；3.合作历史：8年长合作，忠诚度极高；4.信用状况：付款记录良好，投诉率低；5.市场影响力：浙东地区标杆医院。客户价值评分：88/100。建议策略：1.保持现有合作深度；2.提供优先供货和服务；3.考虑战略合作协议；4.共同开展临床研究合作。客户编号：CUS-017，客户类型：重要级。<|im_end|>
+
+[INFO|2026-06-26 14:56:23] llamafactory.model.model_utils.kv_cache:144 >> KV cache is disabled during training.
+[INFO|modeling_utils.py:748] 2026-06-26 14:56:24,649 >> loading weights file /root/autodl-tmp/code/model/Qwen/Qwen2.5-0.5B-Instruct/model.safetensors
+[INFO|modeling_utils.py:821] 2026-06-26 14:56:24,649 >> Will use dtype=torch.bfloat16 as defined in model's config object
+[INFO|configuration_utils.py:1027] 2026-06-26 14:56:24,650 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "use_cache": false
+}
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 52/290 [00:00<00:00, 501.69it/s]Loading weights:  60%|█████▉    | 173/290 [00:00<00:00, 908.15it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 971.32it/s]
+[INFO|configuration_utils.py:978] 2026-06-26 14:56:25,085 >> loading configuration file /root/autodl-tmp/code/model/Qwen/Qwen2.5-0.5B-Instruct/generation_config.json
+[INFO|configuration_utils.py:1027] 2026-06-26 14:56:25,085 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "do_sample": true,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643,
+  "repetition_penalty": 1.1,
+  "temperature": 0.7,
+  "top_k": 20,
+  "top_p": 0.8
+}
+
+[INFO|dynamic_module_utils.py:406] 2026-06-26 14:56:25,086 >> Could not locate the custom_generate/generate.py inside /root/autodl-tmp/code/model/Qwen/Qwen2.5-0.5B-Instruct.
+[INFO|2026-06-26 14:56:25] llamafactory.model.model_utils.checkpointing:144 >> Gradient checkpointing enabled.
+[INFO|2026-06-26 14:56:25] llamafactory.model.model_utils.attention:144 >> Using torch SDPA for faster training and inference.
+[INFO|2026-06-26 14:56:25] llamafactory.model.adapter:144 >> Upcasting trainable params to float32.
+[INFO|2026-06-26 14:56:25] llamafactory.model.adapter:144 >> Fine-tuning method: LoRA
+/root/autodl-tmp/envs/llmf/lib/python3.11/site-packages/peft/config.py:220: UserWarning: Unexpected keyword arguments ['lora_ga_config', 'use_bdlora'] for class LoraConfig, these are ignored. This probably means that you're loading a configuration file that was saved using a higher version of the library and additional parameters have been introduced since. It is highly recommended to upgrade the PEFT version before continuing (e.g. by running `pip install -U peft`).
+  warnings.warn(
+[INFO|2026-06-26 14:56:25] llamafactory.model.adapter:144 >> Loaded adapter(s): /root/autodl-tmp/code/output_tcm_lora
+[INFO|2026-06-26 14:56:25] llamafactory.model.loader:144 >> trainable params: 4,399,104 || all params: 498,431,872 || trainable%: 0.8826
+[WARNING|trainer_utils.py:1238] 2026-06-26 14:56:25,293 >> The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151643}.
+[INFO|trainer.py:1469] 2026-06-26 14:56:25,538 >> ***** Running training *****
+[INFO|trainer.py:1470] 2026-06-26 14:56:25,538 >>   Num examples = 46
+[INFO|trainer.py:1471] 2026-06-26 14:56:25,538 >>   Num Epochs = 20
+[INFO|trainer.py:1472] 2026-06-26 14:56:25,538 >>   Num update steps per epoch = 3
+[INFO|trainer.py:1473] 2026-06-26 14:56:25,538 >>   Instantaneous batch size per device = 8
+[INFO|trainer.py:1476] 2026-06-26 14:56:25,538 >>   Total train batch size (w. parallel, distributed & accumulation) = 16
+[INFO|trainer.py:1477] 2026-06-26 14:56:25,538 >>   Gradient Accumulation steps = 2
+[INFO|trainer.py:1478] 2026-06-26 14:56:25,538 >>   Total optimization steps = 60
+[INFO|trainer.py:1479] 2026-06-26 14:56:25,540 >>   Number of trainable parameters = 4,399,104
+  0%|          | 0/60 [00:00<?, ?it/s]  2%|▏         | 1/60 [00:00<00:56,  1.04it/s]  3%|▎         | 2/60 [00:01<00:36,  1.60it/s]  5%|▌         | 3/60 [00:01<00:28,  1.98it/s]  7%|▋         | 4/60 [00:02<00:25,  2.20it/s]  8%|▊         | 5/60 [00:02<00:23,  2.34it/s] 10%|█         | 6/60 [00:02<00:21,  2.47it/s] 12%|█▏        | 7/60 [00:03<00:21,  2.48it/s] 13%|█▎        | 8/60 [00:03<00:20,  2.53it/s] 15%|█▌        | 9/60 [00:03<00:19,  2.63it/s] 17%|█▋        | 10/60 [00:04<00:19,  2.61it/s][INFO|2026-06-26 14:56:29] llamafactory.train.callbacks:144 >> {'loss': 2.7713, 'learning_rate': 9.0000e-05, 'epoch': 3.33, 'throughput': 9438.24}
+                                                17%|█▋        | 10/60 [00:04<00:19,  2.61it/s] 18%|█▊        | 11/60 [00:04<00:18,  2.60it/s] 20%|██        | 12/60 [00:05<00:17,  2.68it/s] 22%|██▏       | 13/60 [00:05<00:17,  2.63it/s] 23%|██▎       | 14/60 [00:05<00:17,  2.66it/s] 25%|██▌       | 15/60 [00:06<00:16,  2.71it/s] 27%|██▋       | 16/60 [00:06<00:16,  2.64it/s] 28%|██▊       | 17/60 [00:07<00:16,  2.59it/s] 30%|███       | 18/60 [00:07<00:15,  2.64it/s] 32%|███▏      | 19/60 [00:07<00:15,  2.60it/s] 33%|███▎      | 20/60 [00:08<00:15,  2.61it/s]{'loss': '2.771', 'grad_norm': '2.903', 'learning_rate': '9e-05', 'epoch': '3.333', 'num_input_tokens_seen': 41040, 'train_runtime': '4.351', 'train_tokens_per_second': '9433'}
+[INFO|2026-06-26 14:56:33] llamafactory.train.callbacks:144 >> {'loss': 1.5461, 'learning_rate': 1.9000e-04, 'epoch': 6.67, 'throughput': 10092.76}
+                                                33%|███▎      | 20/60 [00:08<00:15,  2.61it/s] 35%|███▌      | 21/60 [00:08<00:14,  2.67it/s] 37%|███▋      | 22/60 [00:08<00:14,  2.63it/s] 38%|███▊      | 23/60 [00:09<00:14,  2.63it/s] 40%|████      | 24/60 [00:09<00:13,  2.64it/s] 42%|████▏     | 25/60 [00:10<00:13,  2.62it/s] 43%|████▎     | 26/60 [00:10<00:13,  2.58it/s] 45%|████▌     | 27/60 [00:10<00:12,  2.64it/s] 47%|████▋     | 28/60 [00:11<00:12,  2.62it/s] 48%|████▊     | 29/60 [00:11<00:11,  2.63it/s] 50%|█████     | 30/60 [00:11<00:11,  2.64it/s]{'loss': '1.546', 'grad_norm': '1.948', 'learning_rate': '0.00019', 'epoch': '6.667', 'num_input_tokens_seen': 82144, 'train_runtime': '8.141', 'train_tokens_per_second': '1.009e+04'}
+[INFO|2026-06-26 14:56:37] llamafactory.train.callbacks:144 >> {'loss': 0.6889, 'learning_rate': 1.7604e-04, 'epoch': 10.00, 'throughput': 10281.36}
+                                                50%|█████     | 30/60 [00:11<00:11,  2.64it/s] 52%|█████▏    | 31/60 [00:12<00:11,  2.60it/s] 53%|█████▎    | 32/60 [00:12<00:10,  2.61it/s] 55%|█████▌    | 33/60 [00:13<00:10,  2.68it/s] 57%|█████▋    | 34/60 [00:13<00:09,  2.67it/s] 58%|█████▊    | 35/60 [00:13<00:09,  2.66it/s] 60%|██████    | 36/60 [00:14<00:08,  2.69it/s] 62%|██████▏   | 37/60 [00:14<00:08,  2.63it/s] 63%|██████▎   | 38/60 [00:14<00:08,  2.64it/s] 65%|██████▌   | 39/60 [00:15<00:07,  2.69it/s] 67%|██████▋   | 40/60 [00:15<00:07,  2.68it/s]{'loss': '0.6889', 'grad_norm': '1.632', 'learning_rate': '0.000176', 'epoch': '10', 'num_input_tokens_seen': 122640, 'train_runtime': '11.93', 'train_tokens_per_second': '1.028e+04'}
+[INFO|2026-06-26 14:56:41] llamafactory.train.callbacks:144 >> {'loss': 0.3474, 'learning_rate': 1.0785e-04, 'epoch': 13.33, 'throughput': 10420.90}
+                                                67%|██████▋   | 40/60 [00:15<00:07,  2.68it/s] 68%|██████▊   | 41/60 [00:16<00:07,  2.62it/s] 70%|███████   | 42/60 [00:16<00:06,  2.68it/s] 72%|███████▏  | 43/60 [00:16<00:06,  2.65it/s] 73%|███████▎  | 44/60 [00:17<00:06,  2.63it/s] 75%|███████▌  | 45/60 [00:17<00:05,  2.71it/s] 77%|███████▋  | 46/60 [00:17<00:05,  2.70it/s] 78%|███████▊  | 47/60 [00:18<00:04,  2.66it/s] 80%|████████  | 48/60 [00:18<00:04,  2.72it/s] 82%|████████▏ | 49/60 [00:19<00:04,  2.71it/s] 83%|████████▎ | 50/60 [00:19<00:03,  2.67it/s]{'loss': '0.3474', 'grad_norm': '1.28', 'learning_rate': '0.0001078', 'epoch': '13.33', 'num_input_tokens_seen': 163456, 'train_runtime': '15.69', 'train_tokens_per_second': '1.042e+04'}
+[INFO|2026-06-26 14:56:44] llamafactory.train.callbacks:144 >> {'loss': 0.1912, 'learning_rate': 3.5055e-05, 'epoch': 16.67, 'throughput': 10527.69}
+                                                83%|████████▎ | 50/60 [00:19<00:03,  2.67it/s][INFO|trainer.py:2668] 2026-06-26 14:56:44,972 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:2670] 2026-06-26 14:56:44,972 >>   Num examples = 6
+[INFO|trainer.py:2673] 2026-06-26 14:56:44,972 >>   Batch size = 8
+{'loss': '0.1912', 'grad_norm': '1.11', 'learning_rate': '3.506e-05', 'epoch': '16.67', 'num_input_tokens_seen': 204496, 'train_runtime': '19.43', 'train_tokens_per_second': '1.053e+04'}
+
+  0%|          | 0/1 [00:00<?, ?it/s][A                                               
+                                     [A 83%|████████▎ | 50/60 [00:19<00:03,  2.67it/s]
+100%|██████████| 1/1 [00:00<00:00, 1603.94it/s][A
+                                               [A[INFO|trainer.py:3815] 2026-06-26 14:56:45,023 >> Saving model checkpoint to saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/checkpoint-50
+/root/autodl-tmp/envs/llmf/lib/python3.11/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in ./model/Qwen/Qwen2.5-0.5B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+[INFO|tokenization_utils_base.py:3278] 2026-06-26 14:56:45,075 >> chat template saved in saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/checkpoint-50/chat_template.jinja
+[INFO|tokenization_utils_base.py:2111] 2026-06-26 14:56:45,075 >> tokenizer config file saved in saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/checkpoint-50/tokenizer_config.json
+ 85%|████████▌ | 51/60 [00:20<00:04,  2.25it/s] 87%|████████▋ | 52/60 [00:20<00:03,  2.36it/s] 88%|████████▊ | 53/60 [00:20<00:02,  2.40it/s] 90%|█████████ | 54/60 [00:21<00:02,  2.52it/s] 92%|█████████▏| 55/60 [00:21<00:01,  2.53it/s] 93%|█████████▎| 56/60 [00:21<00:01,  2.53it/s] 95%|█████████▌| 57/60 [00:22<00:01,  2.63it/s] 97%|█████████▋| 58/60 [00:22<00:00,  2.59it/s] 98%|█████████▊| 59/60 [00:23<00:00,  2.62it/s]100%|██████████| 60/60 [00:23<00:00,  2.69it/s]{'eval_loss': '0.8933', 'eval_runtime': '0.0524', 'eval_samples_per_second': '114.5', 'eval_steps_per_second': '19.08', 'epoch': '16.67', 'num_input_tokens_seen': 204496}
+[INFO|2026-06-26 14:56:48] llamafactory.train.callbacks:144 >> {'loss': 0.1293, 'learning_rate': 3.0827e-07, 'epoch': 20.00, 'throughput': 10465.53}
+                                               100%|██████████| 60/60 [00:23<00:00,  2.69it/s][INFO|trainer.py:2668] 2026-06-26 14:56:48,957 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:2670] 2026-06-26 14:56:48,957 >>   Num examples = 6
+[INFO|trainer.py:2673] 2026-06-26 14:56:48,957 >>   Batch size = 8
+{'loss': '0.1293', 'grad_norm': '1.553', 'learning_rate': '3.083e-07', 'epoch': '20', 'num_input_tokens_seen': 245008, 'train_runtime': '23.41', 'train_tokens_per_second': '1.046e+04'}
+
+  0%|          | 0/1 [00:00<?, ?it/s][A                                               
+                                     [A100%|██████████| 60/60 [00:23<00:00,  2.69it/s]
+100%|██████████| 1/1 [00:00<00:00, 2347.12it/s][A
+                                               [A[INFO|trainer.py:3815] 2026-06-26 14:56:49,009 >> Saving model checkpoint to saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/checkpoint-60
+/root/autodl-tmp/envs/llmf/lib/python3.11/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in ./model/Qwen/Qwen2.5-0.5B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+[INFO|tokenization_utils_base.py:3278] 2026-06-26 14:56:49,052 >> chat template saved in saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/checkpoint-60/chat_template.jinja
+[INFO|tokenization_utils_base.py:2111] 2026-06-26 14:56:49,052 >> tokenizer config file saved in saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/checkpoint-60/tokenizer_config.json
+[INFO|trainer.py:1823] 2026-06-26 14:56:49,190 >> 
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+                                               100%|██████████| 60/60 [00:23<00:00,  2.69it/s]100%|██████████| 60/60 [00:23<00:00,  2.54it/s]
+[INFO|trainer.py:3815] 2026-06-26 14:56:49,192 >> Saving model checkpoint to saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35
+/root/autodl-tmp/envs/llmf/lib/python3.11/site-packages/peft/utils/save_and_load.py:295: UserWarning: Could not find a config file in ./model/Qwen/Qwen2.5-0.5B-Instruct - will assume that the vocabulary was not modified.
+  warnings.warn(
+[INFO|tokenization_utils_base.py:3278] 2026-06-26 14:56:49,229 >> chat template saved in saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/chat_template.jinja
+[INFO|tokenization_utils_base.py:2111] 2026-06-26 14:56:49,229 >> tokenizer config file saved in saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/tokenizer_config.json
+{'eval_loss': '0.9145', 'eval_runtime': '0.0531', 'eval_samples_per_second': '113', 'eval_steps_per_second': '18.83', 'epoch': '20', 'num_input_tokens_seen': 245008}
+{'train_runtime': '23.65', 'train_samples_per_second': '38.9', 'train_steps_per_second': '2.537', 'train_loss': '0.9457', 'epoch': '20', 'num_input_tokens_seen': 245008}
+***** train metrics *****
+  epoch                    =       20.0
+  num_input_tokens_seen    =     245008
+  total_flos               =   496017GF
+  train_loss               =     0.9457
+  train_runtime            = 0:00:23.65
+  train_samples_per_second =     38.901
+  train_steps_per_second   =      2.537
+Figure saved at: saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/training_loss.png
+Figure saved at: saves/Qwen2.5-0.5B-Instruct/lora/train_2026-06-26-14-48-35/training_eval_loss.png
+[WARNING|2026-06-26 14:56:49] llamafactory.extras.ploting:149 >> No metric eval_accuracy to plot.
+[INFO|trainer.py:2668] 2026-06-26 14:56:49,486 >> 
+***** Running Evaluation *****
+[INFO|trainer.py:2670] 2026-06-26 14:56:49,487 >>   Num examples = 6
+[INFO|trainer.py:2673] 2026-06-26 14:56:49,487 >>   Batch size = 8
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 3731.59it/s]
+[INFO|modelcard.py:263] 2026-06-26 14:56:49,541 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+***** eval metrics *****
+  epoch                   =       20.0
+  eval_loss               =     0.9145
+  eval_runtime            = 0:00:00.05
+  eval_samples_per_second =    110.559
+  eval_steps_per_second   =     18.427
+  num_input_tokens_seen   =     245008

@@ -1,0 +1,261 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: 001号项目
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: yangyaofei/vllm:0.2.3@455b644bfcfe0f8d7af1ad191a9e5d0b2d87214b0c6c804012d2d5cccdbbf88a
+    version: null
+kind: app
+version: 0.4.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: knowledge-retrieval
+      id: 1782715769287-source-1782715903529-target
+      source: '1782715769287'
+      sourceHandle: source
+      target: '1782715903529'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1782715903529-source-1782810096070-target
+      selected: false
+      source: '1782715903529'
+      sourceHandle: source
+      target: '1782810096070'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1782810096070-source-answer-target
+      source: '1782810096070'
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: sys.query输入文本
+        selected: false
+        title: 开始
+        type: start
+        variables: []
+      height: 80
+      id: '1782715769287'
+      position:
+        x: -129.48224990211713
+        y: 282
+      positionAbsolute:
+        x: -129.48224990211713
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: '{{#1782810096070.text#}}'
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 103
+      id: answer
+      position:
+        x: 1014.1173061930526
+        y: 282
+      positionAbsolute:
+        x: 1014.1173061930526
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - CznA0qje5fJpkkGRrLU+2grGkh6aMOO0zTPLQwblIOVQkz+18SgO9FjUgYw7Me2Q
+        - JZoKQWpBSIwEvOHnWCrc7qoVdAbz06jO3XYtPphEIRQXhmj4MfY5+FeJeujTHJWw
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: reranking_model
+          top_k: 4
+        query_variable_selector:
+        - '1782715769287'
+        - sys.query
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索
+        type: knowledge-retrieval
+      height: 118
+      id: '1782715903529'
+      position:
+        x: 303.3058468327606
+        y: 282
+      positionAbsolute:
+        x: 303.3058468327606
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1782715903529'
+          - result
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-7b
+          provider: yangyaofei/vllm/vllm
+        prompt_template:
+        - id: da294227-597b-4d5c-ac80-47b7b2a87849
+          role: system
+          text: '系统角色
+
+            你是医疗器械专业商务报价顾问，会回答用的问候比如你好或者你好，请介绍下自己。
+
+
+            ##内容问答
+
+            用户询问内容仅输出正式商务内容，禁止输出思考过程、标签、口语化文字、自问自答内容，所有数据必须严格取自知识库{{#context#}}，严禁编造参数、价格、资质。
+
+            核心执行规则
+
+            信息缺失必须自动补齐，禁止随意报价
+
+            信息齐全，固定用 Markdown 生成标准报价单
+
+
+            ##回复给用户的内容：
+
+            报价编号、报价有效期 30 天、交货周期、付款方式
+
+            产品表格：名称、型号、器械类别、注册证号、含税单价、数量、小计、税率
+
+            费用汇总：设备款、运费、安装培训费、总金额（大小写）
+
+            配套资质：营业执照、经营许可证、产品注册证、厂家授权、ISO13485 证书
+
+            售后：质保年限、上门响应时效、巡检校准服务
+
+            营销增值方案 + 同行业成交案例 + 报价数据来源
+
+            是否需要推荐？
+
+
+            ##规则
+
+            公立医院：含税含运含安装，付款 30% 预付款 + 65% 验收款 + 5% 质保尾款，不低于最低限价
+
+            民营医院：常规含税报价，付款方式可灵活协商
+
+            经销商：自动执行阶梯批量优惠，默认款到发货，可提供区域经销扶持
+
+            无匹配产品回复话术
+
+            未检索到该型号资料，可为您推荐同参数合规替代机型并出具报价，
+
+
+            ##输出约束
+
+            全程商务书面用语，禁止网络口语、冗余描述
+
+            所有报价信息必须标注知识库来源，保证合规可溯源
+
+            报价末尾附带简短商务营销推介话术，提升成交率
+
+            联系方式：18432610186
+
+            负责人：侯志杰'
+        selected: false
+        title: LLM 2
+        type: llm
+        vision:
+          enabled: false
+      height: 94
+      id: '1782810096070'
+      position:
+        x: 697.3548339967858
+        y: 282
+      positionAbsolute:
+        x: 697.3548339967858
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: 311.9527623715371
+      y: 144.9974608770549
+      zoom: 0.5743491774985183
+  rag_pipeline_variables: []
